@@ -15,8 +15,10 @@ NavBar::begin([
         'items' => [
             // Проверка на обычного пользователя
             Yii::$app->user->identity->role_id === 1 ? ['label' => 'Мои заявки', 'url' => ['/request/index']] : '',
+
             //Проверка на админа
             Yii::$app->user->identity->role_id === 2 ? ['label' => 'Админка', 'url' => ['/admin/index']] : '',
+
             Yii::$app->user->isGuest
                 ? ['label' => 'Войти', 'url' => ['/site/login']]
                 : '<li class="nav-item">'
