@@ -57,6 +57,49 @@ public function search($params)
 }
 ```
 
+
+#### 3. Изменяем главную страницу
+
+1. Откройте файл `views/site/index.php`
+2. Переделайте верстку под тематику сайта
+   
+```php
+
+<?php
+
+/** @var yii\web\View $this */
+
+$this->title = 'My Yii Application';
+?>
+<div class="site-index">
+
+    <div class="jumbotron text-center bg-transparent mt-5 mb-5">
+        <h1 class="display-4">Мой не САМ!</h1>
+
+        <p class="lead">Прекрасный сервис</p>
+
+        <?php 
+                // Проверка на гостя
+            if(Yii::$app->user->isGuest) {
+                echo  '<p><a class="btn btn-lg btn-success" href="user/create">Регистрация</a></p>';
+            } else if (Yii::$app->user->identity->role_id === 2) { // Проверка на админа
+                echo  '<p><a class="btn btn-lg btn-success" href="admin/index">Админ-панель</a></p>';
+            } else { //Если не гость и не админ
+                echo  '<p><a class="btn btn-lg btn-success" href="request/index">Мои заявки</a></p>';
+            }
+        
+
+        ?>
+    </div>
+
+    
+
+    </div>
+</div>
+
+
+```
+
 ### Итог
 
 Теперь система имеет:
