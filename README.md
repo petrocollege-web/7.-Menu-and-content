@@ -109,3 +109,5 @@ $this->title = 'My Yii Application';
 2. Фильтрацию заявок для обычных пользователей
 3. Прекрасный главный экран
 
+### [Следующая лекция](https://github.com/petrocollege-web/8.-Request-create)
+### [Предыдущая лекция](https://github.com/petrocollege-web/6.-Admin-panel)
